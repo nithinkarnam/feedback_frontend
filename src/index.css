@@ -1,0 +1,92 @@
+/* stylelint-disable at-rule-no-unknown */
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+/* Custom globals */
+body {
+  background: #c3c3cb; /* light cool background as requested */
+  @apply text-gray-800;
+}
+
+/* small visual helper for card header */
+.header-brand {
+  @apply flex items-center gap-3;
+}
+
+.logo-svg{
+  width:36px;
+  height:36px;
+}
+
+/* Card styling */
+.card {
+  @apply rounded-xl overflow-hidden; /* keep tailwind feel */
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(248,250,252,0.9));
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+.glass {
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+/* subtle lift on hover */
+.card:hover { transform: translateY(-6px); transition: transform 220ms ease; }
+
+/* Buttons */
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600 border-0 text-white shadow-md;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(99,102,241,0.12); }
+
+/* Animated counters */
+.stat-number { font-variant-numeric: tabular-nums; }
+
+/* micro animations */
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.floaty { animation: floaty 6s ease-in-out infinite; }
+
+/* input focus glow */
+.form-control:focus {
+  box-shadow: 0 6px 20px rgba(99,102,241,0.08);
+  border-color: rgba(99,102,241,0.6);
+}
+
+/* Avatar */
+.avatar {
+  width:48px; height:48px; border-radius:9999px; display:inline-flex; align-items:center; justify-content:center; font-weight:600;
+  background:linear-gradient(135deg,#7c3aed,#06b6d4); color:white;
+}
+
+/* small helpers */
+.muted { color: #6b7280 }
+
+/* fade in */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp 420ms ease both; }
+
+/* Toggle switch for admin login */
+.toggle {
+  display: inline-flex; align-items: center; cursor: pointer; user-select: none;
+}
+.toggle-track {
+  width:44px; height:24px; background:#e6e7ef; border-radius:9999px; padding:3px; display:inline-flex; align-items:center; transition: background 160ms ease;
+}
+.toggle-thumb {
+  width:18px; height:18px; background:white; border-radius:9999px; box-shadow:0 2px 6px rgba(2,6,23,0.12); transform: translateX(0); transition: transform 160ms ease;
+}
+.toggle.on .toggle-track { background: linear-gradient(90deg,#7c3aed,#06b6d4); }
+.toggle.on .toggle-thumb { transform: translateX(20px); }
+
+.login-meta { opacity: 0.98 }
+
+

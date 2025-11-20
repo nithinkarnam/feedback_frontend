@@ -1,0 +1,9 @@
+{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  // If you use the Stylelint extension in VS Code, this enables auto-fix on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  }
+}
